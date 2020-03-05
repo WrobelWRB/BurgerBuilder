@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Modal.module.css';
 import Aux from '../../../hoc/Aux';
 import Backdrop from '../Backdrop/Backdrop';
-import burger from '../../../img/burger.png';
+import burger from '../../../assets/images/burger.png';
 
 const modal = (props) => {
 	let classNames = classes.Modal;
@@ -20,7 +20,7 @@ const modal = (props) => {
 					<img src={burger} alt="" />
 				</div>
 				<div className={classes.OrderSummary}>{props.children}</div>
-			</div>;
+			</div>
 		</Aux>
 	);
 };

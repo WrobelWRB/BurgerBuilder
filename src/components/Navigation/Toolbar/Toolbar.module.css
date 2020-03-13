@@ -25,6 +25,12 @@
 .Logo {
 	height: 80%;
 	position: relative;
-	left: 46%;
+	left: 40%;
+}
+
+@media (min-width: 580px) {
+	.Logo {
+		left: 47%;
+	}
 }
 /* colours: #F0A202, #F18805, D95D39, 0E1428, 7B9E89 */

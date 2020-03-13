@@ -8,6 +8,7 @@ h1,
 h2,
 h3 {
 	font-family: 'Fredoka One', sans-serif;
+	font-weight: lighter;
 }
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;

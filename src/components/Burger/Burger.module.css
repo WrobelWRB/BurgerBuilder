@@ -1,11 +1,26 @@
 .Burger {
-	width: 100%;
+	padding-top: 120px;
 	margin: auto;
+	position: relative;
 	height: 250px;
 	overflow: scroll;
 	text-align: center;
 	font-weight: bold;
 	font-size: 1.2rem;
+}
+
+.BackgroundImage {
+	width: 100%;
+	height: 100%;
+	background-color: #cea686;
+	background-image: url(../../assets/images/bg.jpg);
+	background-position: left 300px top 0;
+	background-repeat: repeat;
+	background-size: contain;
+	background-blend-mode: overlay;
+	padding-top: 100px;
+	position: absolute;
+	z-index: -1;
 }
 
 @media (min-width: 500px) and (min-height: 401px) {

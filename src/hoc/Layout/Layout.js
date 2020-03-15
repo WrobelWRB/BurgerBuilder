@@ -21,7 +21,7 @@ class Layout extends Component {
 		return (
 			<Aux className={classes.Layout}>
 				<DrawerToggle opened={this.state.showSideDrawer} clicked={this.sideDrawerHandler} />
-				<Toolbar />
+				<Toolbar goToCheckout={this.props.checkoutHandler} />
 				<SideDrawer showed={this.state.showSideDrawer} clicked={this.hideSideDrawer} />
 				<div className={classes.Main}>{this.props.children}</div>
 			</Aux>

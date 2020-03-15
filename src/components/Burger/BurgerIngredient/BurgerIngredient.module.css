@@ -17,6 +17,8 @@
 	z-index: 300;
 	margin: -31px;
 	position: relative;
+	animation-duration: 0.2s;
+	animation-name: slidein;
 }
 
 .Cheese {
@@ -24,6 +26,8 @@
 	z-index: 301;
 	margin: -24px;
 	position: relative;
+	animation-duration: 0.2s;
+	animation-name: slidein;
 }
 
 .Salad {
@@ -31,6 +35,8 @@
 	z-index: 305;
 	margin: -13px;
 	position: relative;
+	animation-duration: 0.2s;
+	animation-name: slidein;
 }
 
 .Bacon {
@@ -38,4 +44,18 @@
 	z-index: 302;
 	margin: -20px;
 	position: relative;
+	animation-duration: 0.2s;
+	animation-name: slidein;
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 100%;
+		width: 300%;
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
 }

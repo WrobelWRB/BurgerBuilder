@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './NavigationIcon.module.css';
+import classes from './DrawerToggle.module.css';
 
 const navigationIcon = (props) => {
 	return (
@@ -7,11 +7,11 @@ const navigationIcon = (props) => {
 			className={
 				props.opened ? (
 					[
-						classes.NavIcon,
+						classes.DrawerToggle,
 						classes.open
 					].join(' ')
 				) : (
-					classes.NavIcon
+					classes.DrawerToggle
 				)
 			}
 			onClick={props.clicked}

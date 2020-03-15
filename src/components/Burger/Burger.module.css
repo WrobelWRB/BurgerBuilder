@@ -18,9 +18,9 @@
 	background-repeat: repeat;
 	background-size: contain;
 	background-blend-mode: overlay;
-	padding-top: 100px;
 	position: absolute;
 	z-index: -1;
+	top: 56px;
 }
 
 @media (min-width: 500px) and (min-height: 401px) {

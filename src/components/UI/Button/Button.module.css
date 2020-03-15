@@ -9,16 +9,27 @@
 	margin: 10px;
 	font-weight: bold;
 }
-
 .Button:first-of-type {
 	margin-left: 0;
-	padding-left: 0;
 }
-
 .Success {
-	color: #5c9210;
+	background-color: transparent;
+	border: 3px solid rgb(255, 218, 116);
+	color: rgb(255, 218, 116);
+	border-radius: 30px;
+}
+.Success:hover {
+	background-color: rgb(255, 218, 116);
+	color: #3d2222;
 }
 
 .Danger {
+	background-color: transparent;
+	border: 3px solid #944317;
+	border-radius: 30px;
 	color: #944317;
+}
+.Danger:hover {
+	background-color: #944317;
+	color: #3d2222;
 }

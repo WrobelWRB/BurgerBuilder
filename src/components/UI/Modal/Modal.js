@@ -1,28 +1,36 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classes from './Modal.module.css';
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
-import burger from '../../../assets/images/burger.png';
+import burger from '../../../assets/images/burger-logo.png';
 
-const modal = (props) => {
-	let classNames = classes.Modal;
-	if (props.showModal) {
-		classNames = [
-			classes.Modal,
-			classes.In
-		].join(' ');
+class Modal extends Component {
+	shouldComponentUpdate(nextProps, nextState) {
+		return this.props.showModal !== nextProps.showModal;
 	}
-	return (
-		<Aux>
-			<Backdrop showBackdrop={props.showModal} dismissed={props.hideModal} />
-			<div className={classNames}>
-				<div className={classes.Header}>
-					<img src={burger} alt="" />
+	componentDidUpdate() {
+		console.log('[Modal] updated.');
+	}
+	render() {
+		let classNames = classes.Modal;
+		if (this.props.showModal) {
+			classNames = [
+				classes.Modal,
+				classes.In
+			].join(' ');
+		}
+		return (
+			<Aux>
+				<Backdrop showBackdrop={this.props.showModal} dismissed={this.props.hideModal} />
+				<div className={classNames}>
+					<div className={classes.Header}>
+						<img src={burger} alt="" />
+					</div>
+					<div className={classes.OrderSummary}>{this.props.children}</div>
 				</div>
-				<div className={classes.OrderSummary}>{props.children}</div>
-			</div>
-		</Aux>
-	);
-};
+			</Aux>
+		);
+	}
+}
 
-export default modal;
+export default Modal;

@@ -2,6 +2,8 @@
 
 Welcome to BurgerBuilder - my first react app.
 
+It's live on https://wrobelwrb.github.io/BurgerBuilder/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

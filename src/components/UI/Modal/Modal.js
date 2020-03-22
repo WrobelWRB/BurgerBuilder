@@ -6,7 +6,7 @@ import burger from '../../../assets/images/burger-logo.png';
 
 class Modal extends Component {
 	shouldComponentUpdate(nextProps, nextState) {
-		return this.props.showModal !== nextProps.showModal;
+		return this.props.showModal !== nextProps.showModal || this.props.loading !== nextProps.loading;
 	}
 	componentDidUpdate() {
 		console.log('[Modal] updated.');
@@ -16,7 +16,15 @@ class Modal extends Component {
 		if (this.props.showModal) {
 			classNames = [
 				classes.Modal,
+				classes.Summary,
 				classes.In
+			].join(' ');
+		}
+		if (this.props.loading) {
+			classNames = [
+				classes.Modal,
+				classes.In,
+				classes.Loading
 			].join(' ');
 		}
 		return (

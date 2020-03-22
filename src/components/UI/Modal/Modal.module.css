@@ -2,7 +2,6 @@
 	position: fixed;
 	z-index: 500;
 	color: rgb(255, 218, 116);
-	background: linear-gradient(#3d2222 1%, #221313 70%);
 	width: 70%;
 	box-shadow: 1px 1px 1px black;
 	left: 15%;
@@ -14,6 +13,12 @@
 }
 .In {
 	transform: translateX(0);
+}
+.Summary {
+	background: linear-gradient(#3d2222 1%, #221313 70%);
+}
+.Loading {
+	background-color: #d95d39;
 }
 @media (min-width: 600px) {
 	.Modal {

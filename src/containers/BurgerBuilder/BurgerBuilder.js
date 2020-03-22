@@ -5,6 +5,7 @@ import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Modal/Modal';
 import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 import axios from '../../axios-orders';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 const INGREDIENT_PRICES = {
 	salad: 1.3,
@@ -27,7 +28,8 @@ class BurgerBuilder extends Component {
 			meat: 0
 		},
 		totalPrice: 0,
-		purchasing: false
+		purchasing: false,
+		loading: false
 	};
 
 	addIngredientHandler = (type) => {
@@ -62,6 +64,7 @@ class BurgerBuilder extends Component {
 	};
 	continueHandler = () => {
 		//	alert('Your order has been sent');
+		this.setState({ loading: true });
 		const order = {
 			ingredients: this.state.ingredients,
 			price: this.state.totalPrice,
@@ -80,9 +83,10 @@ class BurgerBuilder extends Component {
 			.then((response) => {
 				console.log(response);
 				alert('We received your order :)');
-				this.setState({ purchasing: false });
+				this.setState({ purchasing: false, loading: false });
 			})
 			.catch((error) => {
+				this.setState({ purchasing: false, loading: false });
 				console.log(error);
 			});
 	};
@@ -95,15 +99,22 @@ class BurgerBuilder extends Component {
 		const ingredientsObject = { ...this.state.ingredients };
 		const disabledOrderInfo = Object.values(ingredientsObject).reduce((a, c) => a + c) === 0;
 
+		let orderSummary = (
+			<OrderSummary
+				ingredients={this.state.ingredients}
+				canceled={this.dismissHandler}
+				continued={this.continueHandler}
+				price={this.state.totalPrice.toFixed(2)}
+			/>
+		);
+		if (this.state.loading) {
+			orderSummary = <Spinner />;
+		}
+
 		return (
 			<Aux>
-				<Modal showModal={this.state.purchasing} hideModal={this.dismissHandler}>
-					<OrderSummary
-						ingredients={this.state.ingredients}
-						canceled={this.dismissHandler}
-						continued={this.continueHandler}
-						price={this.state.totalPrice.toFixed(2)}
-					/>
+				<Modal showModal={this.state.purchasing} hideModal={this.dismissHandler} loading={this.state.loading}>
+					{orderSummary}
 				</Modal>
 				<BuildControls
 					ingredientAdded={this.addIngredientHandler}

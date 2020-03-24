@@ -31,7 +31,7 @@ class BurgerBuilder extends Component {
 
 	componentDidMount() {
 		axios
-			.get('https://burgerbuilder-f477f.firebaseio.com/ingredients')
+			.get('https://burgerbuilder-f477f.firebaseio.com/ingredients.json')
 			.then((response) => {
 				this.setState({ ingredients: response.data });
 			})
@@ -91,6 +91,7 @@ class BurgerBuilder extends Component {
 			.then((response) => {
 				console.log(response);
 				this.setState({ purchasing: false, loading: false });
+				alert('We received your order :)');
 			})
 			.catch((error) => {
 				this.setState({ purchasing: false, loading: false });

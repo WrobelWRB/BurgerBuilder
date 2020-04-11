@@ -110,7 +110,7 @@ class BurgerBuilder extends Component {
 
 		let orderSummary = null;
 
-		let burger = this.state.error ? <p>Ingredients can't be loaded.</p> : <Spinner />;
+		let burger = this.state.error ? <p>Ingredients can't be loaded.</p> : <Spinner type="builder" />;
 		if (this.state.ingredients) {
 			burger = (
 				<Aux>
@@ -136,7 +136,7 @@ class BurgerBuilder extends Component {
 			disabledOrderInfo = Object.values(ingredientsObject).reduce((a, c) => a + c) === 0;
 		}
 		if (this.state.loading) {
-			orderSummary = <Spinner />;
+			orderSummary = <Spinner type="order" />;
 		}
 
 		return (

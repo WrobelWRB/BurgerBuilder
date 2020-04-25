@@ -9,6 +9,16 @@
 	font-size: 1.2rem;
 }
 
+.Order {
+	padding-top: 40px;
+	width: 450px;
+	height: 400px;
+}
+.Burger.Order {
+	width: 450px;
+	height: 350px;
+}
+
 .BackgroundImage {
 	width: 100%;
 	height: 100%;

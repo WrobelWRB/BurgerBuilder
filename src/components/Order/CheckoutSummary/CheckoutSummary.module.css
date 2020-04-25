@@ -1,0 +1,10 @@
+.CheckoutSummary {
+	padding-block-start: 120px;
+	text-align: center;
+	width: 100%;
+}
+
+@media (min-width: 600px) {
+	.CheckoutSummary {
+	}
+}

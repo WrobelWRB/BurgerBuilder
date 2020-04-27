@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BurgerBuilder/static/css/main.dcda906a.chunk.css",
-    "main.js": "/BurgerBuilder/static/js/main.6fd16b5b.chunk.js",
-    "main.js.map": "/BurgerBuilder/static/js/main.6fd16b5b.chunk.js.map",
+    "main.js": "/BurgerBuilder/static/js/main.7f12d6b0.chunk.js",
+    "main.js.map": "/BurgerBuilder/static/js/main.7f12d6b0.chunk.js.map",
     "runtime-main.js": "/BurgerBuilder/static/js/runtime-main.150bde80.js",
     "runtime-main.js.map": "/BurgerBuilder/static/js/runtime-main.150bde80.js.map",
     "static/js/2.e0a8c02e.chunk.js": "/BurgerBuilder/static/js/2.e0a8c02e.chunk.js",
     "static/js/2.e0a8c02e.chunk.js.map": "/BurgerBuilder/static/js/2.e0a8c02e.chunk.js.map",
     "index.html": "/BurgerBuilder/index.html",
-    "precache-manifest.c7ccb23296137ff92b4581a0e177b8df.js": "/BurgerBuilder/precache-manifest.c7ccb23296137ff92b4581a0e177b8df.js",
+    "precache-manifest.797155fb94a911e4ba85e44159027519.js": "/BurgerBuilder/precache-manifest.797155fb94a911e4ba85e44159027519.js",
     "service-worker.js": "/BurgerBuilder/service-worker.js",
     "static/css/main.dcda906a.chunk.css.map": "/BurgerBuilder/static/css/main.dcda906a.chunk.css.map",
     "static/js/2.e0a8c02e.chunk.js.LICENSE.txt": "/BurgerBuilder/static/js/2.e0a8c02e.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.150bde80.js",
     "static/js/2.e0a8c02e.chunk.js",
     "static/css/main.dcda906a.chunk.css",
-    "static/js/main.6fd16b5b.chunk.js"
+    "static/js/main.7f12d6b0.chunk.js"
   ]
 }

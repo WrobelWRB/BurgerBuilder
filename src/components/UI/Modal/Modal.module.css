@@ -10,6 +10,7 @@
 	transition: all 0.3s ease-out;
 	transform: translateX(-500vh);
 	border-radius: 30px;
+	border: 3px solid rgb(255, 218, 116);
 }
 .In {
 	transform: translateX(0);

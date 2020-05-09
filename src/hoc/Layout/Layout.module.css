@@ -1,6 +1,15 @@
 .Main {
 	display: flex;
 	flex-direction: column-reverse;
+	overflow: hidden;
+	background-image: url(../../assets/images/bg.jpg);
+	background-color: #cea686;
+    /* background-image: url(./assets/images/bg.jpg);  */
+	background-position: left 300px top 0;
+	background-repeat: repeat;
+	background-size: contain;
+	background-blend-mode: overlay;
+	
 }
 @media (min-width: 780px) {
 	.Main {

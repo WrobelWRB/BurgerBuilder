@@ -5,8 +5,11 @@ import Button from '../../UI/Button/Button';
 import classes from './CheckoutSummary.module.css';
 
 const checkoutSummary = (props) => {
+	let classList = [classes.CheckoutSummary];
+	classList = props.showContact ? [classes.CheckoutSummary, classes.Aside] : [classes.CheckoutSummary];
+
 	return (
-		<div className={classes.CheckoutSummary}>
+		<div className={classList.join(' ')}>
 			<h1>We hope it tastes well!</h1>
 			<div style={{ width: '100%', margin: 'auto' }}>
 				<Burger place="order" ingredients={props.ingredients} />
@@ -14,7 +17,7 @@ const checkoutSummary = (props) => {
 			<Button btnType="Danger" clicked={props.checkoutCancelled}>
 				CANCEL
 			</Button>
-			<Button btnType="Success" clicked={props.checkoutContinued}>
+			<Button btnType="Success" clicked={props.checkoutContinued} disabled={props.continueDisabled}>
 				CONTINUE
 			</Button>
 		</div>

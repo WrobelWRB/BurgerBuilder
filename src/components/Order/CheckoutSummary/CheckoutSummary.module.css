@@ -1,10 +1,12 @@
 .CheckoutSummary {
 	padding-block-start: 120px;
 	text-align: center;
-	width: 100%;
-}
+	width: 450px;
+	margin: auto;
+	transition: transform 300ms;
 
-@media (min-width: 600px) {
-	.CheckoutSummary {
-	}
+}
+.Aside {
+	transform: translateX(-20vw);
+	transition: transform 300ms;
 }

@@ -28,7 +28,7 @@ const burger = (props) => {
 
 	return (
 		<Aux>
-			<div className={classes.BackgroundImage} />
+
 			<div className={burgerClasses.join(' ')}>
 				<BurgerIngredient type="bread-top" />
 				{transformedIngredients}

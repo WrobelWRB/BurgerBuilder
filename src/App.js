@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 class App extends Component {
 	render() {
 		return (
-			<BrowserRouter>
+			<BrowserRouter basename="/BurgerBuilder">
 				<Layout>
 					<Switch>
 						<Route path="/checkout" component={Checkout} />

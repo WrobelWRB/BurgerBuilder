@@ -38,3 +38,13 @@
 	background-color: #944317;
 	color: #3d2222;
 }
+.Button:disabled,
+.Button[disabled] {
+	color: rgb(173, 158, 148);
+	border: 3px solid rgb(173, 158, 148);
+	cursor: unset;
+}
+.Button:disabled:hover,
+.Button[disabled]:hover {
+	background-color: transparent;
+}

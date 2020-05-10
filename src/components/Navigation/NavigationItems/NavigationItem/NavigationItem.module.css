@@ -46,12 +46,7 @@
 		display: block;
 		transition: all ease-in-out 0.1s;
 	}
-	.NavigationItem a:active,
-	.NavigationItem a.active {
-		color: rgb(255, 236, 182);
-		border-bottom: 3px solid #0e1428;
-		transition: all ease-in-out 0.1s;
-	}
+
 	.NavigationItem a:hover {
 		border-bottom: 3px solid #0e1428;
 		color: rgb(255, 236, 182);

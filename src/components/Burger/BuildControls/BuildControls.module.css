@@ -1,5 +1,4 @@
 .BuildControls {
-	height: 100%;
 	background: linear-gradient(#3d2222 1%, #221313 70%);
 	display: flex;
 	flex-flow: column;
@@ -18,6 +17,7 @@
 		border-top: 0;
 		border-left: 0;
 		width: auto;
+		max-height: 50%;
 		border-bottom-right-radius: 30px;
 	}
 }

@@ -4,7 +4,6 @@
 	overflow: hidden;
 	background-image: url(../../assets/images/bg.jpg);
 	background-color: #cea686;
-    /* background-image: url(./assets/images/bg.jpg);  */
 	background-position: left 300px top 0;
 	background-repeat: repeat;
 	background-size: contain;
@@ -15,5 +14,6 @@
 	.Main {
 		display: flex;
 		flex-direction: row;
+		height: 100vh;
 	}
 }

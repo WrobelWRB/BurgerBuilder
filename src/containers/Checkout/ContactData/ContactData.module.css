@@ -2,7 +2,7 @@
 	position: relative;
 	margin: 20px auto;
 	width: 60%;
-	max-height: 310px;
+	max-height: 370px;
 	text-align: center;
 	border: 3px solid rgb(255, 218, 116);
 	transition: all 300ms ease-out;
@@ -31,7 +31,7 @@
 	.ContactData {
 		width: 370px;
 		top: -72%;
-		max-height: 310px;
+		max-height: 370px;
 		background: linear-gradient(#3d2222 1%, #221313 70%);
 		color: rgb(255, 218, 116);
 		padding: 16px;

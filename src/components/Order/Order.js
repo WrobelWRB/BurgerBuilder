@@ -21,11 +21,15 @@ const order = (props) => {
 	));
 	return (
 		<div className={classes.Order}>
-			<p>ID: {props.key}</p>
-			<p>Ingredients:</p>
-			{ingredientOutput}
 			<p>
-				Price: <strong>{Number.parseFloat(props.price).toFixed(2)}</strong>
+				<strong>Order ID:</strong> {props.id}
+			</p>
+			<p>
+				<strong>Ingredients:</strong>
+				{ingredientOutput}
+			</p>
+			<p>
+				<strong>Price: {Number.parseFloat(props.price).toFixed(2)}</strong>
 			</p>
 		</div>
 	);

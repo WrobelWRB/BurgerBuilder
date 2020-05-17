@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Order from '../../components/Order/Order';
 import axios from '../../axios-orders';
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-/* import Spinner from '../../components/UI/Spinner/Spinner'; */
-
+import classes from './Orders.module.css';
 class Orders extends Component {
 	state = {
 		orders: [],
@@ -14,7 +13,6 @@ class Orders extends Component {
 			.get('/orders.json')
 			.then((response) => {
 				const fetchedOrders = [];
-				console.log(response.data);
 				for (let key in response.data) {
 					fetchedOrders.push({
 						...response.data[key],
@@ -31,9 +29,10 @@ class Orders extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div className={classes.Orders}>
+				<h1>Your orders</h1>
 				{this.state.orders.map((order) => (
-					<Order key={order.id} ingredients={order.ingredients} price={order.price} />
+					<Order id={order.id} ingredients={order.ingredients} price={order.price} />
 				))}
 			</div>
 		);

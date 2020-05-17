@@ -1,0 +1,9 @@
+.Input {
+	width: 100%;
+}
+.Label {
+	display: block;
+	text-align: left;
+	width: 70%;
+	margin: 0 auto;
+}

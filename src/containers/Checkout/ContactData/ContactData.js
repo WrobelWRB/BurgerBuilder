@@ -7,11 +7,70 @@ import Input from '../../../components/UI/Input/Input';
 
 class ContactData extends Component {
 	state = {
-		name: '',
-		email: '',
-		adress: {
-			street: '',
-			postalCode: ''
+		orderForm: {
+			name: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					name: 'name',
+					label: 'Your name',
+					placeholder: 'Your name'
+				},
+				value: ''
+			},
+			street: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					name: 'street',
+					label: 'Street',
+					placeholder: 'Street'
+				},
+				value: ''
+			},
+			zipCode: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					name: 'zipcode',
+					label: 'Postal code',
+					placeholder: 'Postal code'
+				},
+				value: ''
+			},
+			city: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					name: 'city',
+					label: 'City',
+					placeholder: 'City'
+				},
+				value: ''
+			},
+			country: {
+				elementType: 'input',
+				elementConfig: {
+					type: 'text',
+					name: 'country',
+					label: 'Country',
+					placeholder: 'Country'
+				},
+				value: ''
+			},
+			deliveryMethod: {
+				elementType: 'select',
+				elementConfig: {
+					label: 'Delivery',
+					options: [
+						{ value: 'fastest', displayValue: 'Fastest' },
+						{ value: 'cheapest', displayValue: 'Cheapest' }
+					],
+					name: 'delivery',
+					placeholder: 'Delivery method and time'
+				},
+				value: ''
+			}
 		},
 		loading: false
 	};
@@ -44,6 +103,15 @@ class ContactData extends Component {
 				console.log(error);
 			});
 	};
+	inputChangedHandler = (event, inputIdentifier) => {
+		const updatedOrderForm = { ...this.state.orderForm };
+		const updatedFormElement = {
+			...updatedOrderForm[inputIdentifier]
+		};
+		updatedFormElement.value = event.target.value;
+		updatedOrderForm[inputIdentifier] = updatedFormElement;
+		this.setState({ orderForm: updatedOrderForm });
+	};
 
 	render() {
 		let classList = [
@@ -58,18 +126,25 @@ class ContactData extends Component {
 					classes.ContactData
 				];
 
+		const formElementsArray = [];
+		for (let key in this.state.orderForm) {
+			formElementsArray.push({ id: key, config: this.state.orderForm[key] });
+		}
+
 		let form = (
 			<form>
-				<Input label="Your name" inputtype="input" type="text" name="name" placeholder="Your name" />
-				<Input
-					label="Your email"
-					inputtype="input"
-					type="email"
-					name="email"
-					placeholder="Your email address"
-				/>
-				<Input label="Street" inputtype="input" type="text" name="street" placeholder="Street" />
-				<Input label="Postal code" inputtype="input" type="text" name="postal" placeholder="Postal code" />
+				{formElementsArray.map((el) => {
+					return (
+						<Input
+							key={el.id}
+							elementType={el.config.elementType}
+							elementConfig={el.config.elementConfig}
+							label={el.config.elementConfig.label}
+							value={el.config.value}
+							changed={(event) => this.inputChangedHandler(event, el.id)}
+						/>
+					);
+				})}
 				<Button btnType="Success" clicked={this.orderHandler}>
 					ORDER
 				</Button>

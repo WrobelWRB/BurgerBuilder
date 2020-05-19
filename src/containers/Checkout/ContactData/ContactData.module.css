@@ -2,7 +2,7 @@
 	position: relative;
 	margin: 20px auto;
 	width: 60%;
-	max-height: 370px;
+
 	text-align: center;
 	border: 3px solid rgb(255, 218, 116);
 	transition: all 300ms ease-out;
@@ -18,10 +18,7 @@
 	justify-content: center;
 	flex-direction: column;
 }
-.ContactData form input {
-	width: 70%;
-	margin: 10px auto;
-}
+
 .ContactData form button {
 	margin: 30px auto !important;
 	width: 30%;
@@ -31,7 +28,6 @@
 	.ContactData {
 		width: 370px;
 		top: -72%;
-		max-height: 370px;
 		background: linear-gradient(#3d2222 1%, #221313 70%);
 		color: rgb(255, 218, 116);
 		padding: 16px;

@@ -16,7 +16,11 @@ class ContactData extends Component {
 					label: 'Your name',
 					placeholder: 'Your name'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true,
+					minLength: 2
+				}
 			},
 			street: {
 				elementType: 'input',
@@ -26,7 +30,10 @@ class ContactData extends Component {
 					label: 'Street',
 					placeholder: 'Street'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				}
 			},
 			zipCode: {
 				elementType: 'input',
@@ -36,7 +43,10 @@ class ContactData extends Component {
 					label: 'Postal code',
 					placeholder: 'Postal code'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				}
 			},
 			city: {
 				elementType: 'input',
@@ -46,7 +56,10 @@ class ContactData extends Component {
 					label: 'City',
 					placeholder: 'City'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				}
 			},
 			country: {
 				elementType: 'input',
@@ -56,7 +69,10 @@ class ContactData extends Component {
 					label: 'Country',
 					placeholder: 'Country'
 				},
-				value: ''
+				value: '',
+				validation: {
+					required: true
+				}
 			},
 			deliveryMethod: {
 				elementType: 'select',
@@ -105,10 +121,20 @@ class ContactData extends Component {
 			...updatedOrderForm[inputIdentifier]
 		};
 		updatedFormElement.value = event.target.value;
+		console.log(this.checkValidity(updatedFormElement.value, updatedFormElement.validation));
 		updatedOrderForm[inputIdentifier] = updatedFormElement;
 		this.setState({ orderForm: updatedOrderForm });
 	};
-
+	checkValidity = (value, rules) => {
+		let isValid = true;
+		if (rules.required) {
+			isValid = value.trim() !== '' && isValid;
+		}
+		if (rules.minLength) {
+			isValid = value.length >= rules.minLength && isValid;
+		}
+		return isValid;
+	};
 	render() {
 		let classList = [
 			classes.ContactData

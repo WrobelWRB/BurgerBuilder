@@ -1,6 +1,6 @@
 # Burger Builder
 
-Welcome to BurgerBuilder - my first react app.
+Welcome to BurgerBuilder - my first react app. This is modified and upgraded version of application from Maximilian Schwarzmüller's React course on Udemy.
 
 It's live on https://wrobelwrb.github.io/BurgerBuilder/
 

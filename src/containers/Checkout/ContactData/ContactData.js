@@ -20,7 +20,8 @@ class ContactData extends Component {
 				validation: {
 					required: true,
 					minLength: 2
-				}
+				},
+				valid: true
 			},
 			street: {
 				elementType: 'input',
@@ -33,7 +34,8 @@ class ContactData extends Component {
 				value: '',
 				validation: {
 					required: true
-				}
+				},
+				valid: true
 			},
 			zipCode: {
 				elementType: 'input',
@@ -46,7 +48,8 @@ class ContactData extends Component {
 				value: '',
 				validation: {
 					required: true
-				}
+				},
+				valid: true
 			},
 			city: {
 				elementType: 'input',
@@ -59,7 +62,8 @@ class ContactData extends Component {
 				value: '',
 				validation: {
 					required: true
-				}
+				},
+				valid: true
 			},
 			country: {
 				elementType: 'input',
@@ -72,7 +76,8 @@ class ContactData extends Component {
 				value: '',
 				validation: {
 					required: true
-				}
+				},
+				valid: true
 			},
 			deliveryMethod: {
 				elementType: 'select',
@@ -85,7 +90,11 @@ class ContactData extends Component {
 					name: 'delivery',
 					placeholder: 'Delivery method and time'
 				},
-				value: 'fastest'
+				value: 'fastest',
+				validation: {
+					required: true
+				},
+				valid: true
 			}
 		},
 		loading: false
@@ -121,6 +130,7 @@ class ContactData extends Component {
 			...updatedOrderForm[inputIdentifier]
 		};
 		updatedFormElement.value = event.target.value;
+		updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
 		console.log(this.checkValidity(updatedFormElement.value, updatedFormElement.validation));
 		updatedOrderForm[inputIdentifier] = updatedFormElement;
 		this.setState({ orderForm: updatedOrderForm });
@@ -164,6 +174,7 @@ class ContactData extends Component {
 							label={el.config.elementConfig.label}
 							value={el.config.value}
 							changed={(event) => this.inputChangedHandler(event, el.id)}
+							invalid={!el.config.valid}
 						/>
 					);
 				})}

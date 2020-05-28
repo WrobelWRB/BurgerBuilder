@@ -7,8 +7,13 @@ const input = (props) => {
 	const inputClasses = [
 		classes.InputElement
 	];
+	const feedbackClasses = [
+		classes.Feedback
+	];
+
 	if (props.invalid) {
 		inputClasses.push(classes.Invalid);
+		feedbackClasses.push(classes.In);
 	}
 
 	switch (props.elementType) {
@@ -19,6 +24,7 @@ const input = (props) => {
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
+					onBlur={props.blured}
 				/>
 			);
 			break;
@@ -29,6 +35,7 @@ const input = (props) => {
 					{...props.elementConfig}
 					value={props.value}
 					onChange={props.changed}
+					onBlur={props.blured}
 				/>
 			);
 			break;
@@ -56,6 +63,7 @@ const input = (props) => {
 		<div className={classes.Input}>
 			<label className={classes.Label}>{props.label}</label>
 			{inputElement}
+			<div className={feedbackClasses.join(' ')}>{props.validationFeedback}</div>
 		</div>
 	);
 };

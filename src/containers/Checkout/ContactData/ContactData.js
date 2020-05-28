@@ -19,7 +19,8 @@ class ContactData extends Component {
 				value: '',
 				validation: {
 					required: true,
-					minLength: 2
+					minLength: 2,
+					feedback: 'Must be at least 2 characters long'
 				},
 				valid: true
 			},
@@ -33,7 +34,8 @@ class ContactData extends Component {
 				},
 				value: '',
 				validation: {
-					required: true
+					required: true,
+					feedback: 'This field is required'
 				},
 				valid: true
 			},
@@ -47,7 +49,9 @@ class ContactData extends Component {
 				},
 				value: '',
 				validation: {
-					required: true
+					required: true,
+					minLength: 5,
+					feedback: 'Must be at least 5 characters long'
 				},
 				valid: true
 			},
@@ -61,7 +65,8 @@ class ContactData extends Component {
 				},
 				value: '',
 				validation: {
-					required: true
+					required: true,
+					feedback: 'This field is required'
 				},
 				valid: true
 			},
@@ -75,7 +80,8 @@ class ContactData extends Component {
 				},
 				value: '',
 				validation: {
-					required: true
+					required: true,
+					feedback: 'This field is required'
 				},
 				valid: true
 			},
@@ -97,6 +103,7 @@ class ContactData extends Component {
 				valid: true
 			}
 		},
+		formIsValid: false,
 		loading: false
 	};
 
@@ -131,9 +138,13 @@ class ContactData extends Component {
 		};
 		updatedFormElement.value = event.target.value;
 		updatedFormElement.valid = this.checkValidity(updatedFormElement.value, updatedFormElement.validation);
-		console.log(this.checkValidity(updatedFormElement.value, updatedFormElement.validation));
 		updatedOrderForm[inputIdentifier] = updatedFormElement;
-		this.setState({ orderForm: updatedOrderForm });
+
+		let formIsValid = true;
+		for (let inputIdentifier in updatedOrderForm) {
+			formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
+		}
+		this.setState({ orderForm: updatedOrderForm, formIsValid: formIsValid });
 	};
 	checkValidity = (value, rules) => {
 		let isValid = true;
@@ -173,12 +184,16 @@ class ContactData extends Component {
 							elementConfig={el.config.elementConfig}
 							label={el.config.elementConfig.label}
 							value={el.config.value}
+							blured={(event) => this.inputChangedHandler(event, el.id)}
 							changed={(event) => this.inputChangedHandler(event, el.id)}
 							invalid={!el.config.valid}
+							validationFeedback={el.config.validation.feedback}
 						/>
 					);
 				})}
-				<Button btnType="Success">ORDER</Button>
+				<Button disabled={!this.state.formIsValid} btnType="Success">
+					ORDER
+				</Button>
 			</form>
 		);
 		if (this.state.loading) {

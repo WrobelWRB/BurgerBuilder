@@ -21,3 +21,19 @@
 	border: 2px solid red;
 	background-color: salmon;
 }
+
+.Feedback {
+	display: block;
+	width: 72%;
+	margin: auto;
+	text-align: left;
+	font-size: 13px;
+	color: red;
+	height: 0;
+	opacity: 0;
+}
+.In {
+	transition: all 0.2s ease-in-out;
+	opacity: 1;
+	height: 100%;
+}
